@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto RappiPlus | Esperanza García</title>
+
+    <meta name="description" content="Análisis de negocio de RappiPlus con Python, SQL, estadística y herramientas de Business Intelligence.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #263238;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #172b4d;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #dce6f2;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            color: #172b4d;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #344563;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tools span {
+            background: #e8eef7;
+            color: #172b4d;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .kpi {
+            background: #f0f4fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .kpi strong {
+            display: block;
+            color: #172b4d;
+            font-size: 1.35rem;
+            margin-bottom: 5px;
+        }
+
+        .kpi small {
+            color: #596579;
+        }
+
+        .result {
+            background: #f0f4fa;
+            border-left: 4px solid #315b8a;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .file-links {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .file-links a {
+            display: block;
+            background: #e8eef7;
+            color: #172b4d;
+            padding: 13px 16px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .file-links a:hover {
+            background: #d8e3f2;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #172b4d;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #667085;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>RappiPlus: de datos a decisiones de negocio</h1>
+    <p>Proyecto final de análisis de datos | 2025</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Descripción del proyecto</h2>
+
+        <p>
+            El objetivo de este proyecto es evaluar el desempeño
+            del servicio RappiPlus para apoyar decisiones de negocio
+            basadas en datos.
+        </p>
+
+        <p>
+            Se integran datos de pedidos, catálogo de productos,
+            inversión en marketing, comportamiento de usuarios
+            y resultados de un experimento A/B en el proceso
+            de checkout.
+        </p>
+
+        <p>
+            El análisis sigue un proceso integral: validar la calidad
+            de los datos, evaluar la rentabilidad, estudiar el funnel
+            de conversión, analizar la retención de usuarios y medir
+            el impacto de cambios en la experiencia de compra.
+        </p>
+    </section>
+
+    <section>
+        <h2>Objetivos del análisis</h2>
+
+        <ul>
+            <li>Evaluar y mejorar la calidad de los datos.</li>
+            <li>Calcular ingresos, costos, inversión en marketing y profit.</li>
+            <li>Identificar los productos y canales con mayor desempeño.</li>
+            <li>Analizar las etapas del funnel de conversión.</li>
+            <li>Estudiar la retención de usuarios mediante cohortes.</li>
+            <li>Evaluar estadísticamente un experimento A/B.</li>
+            <li>Comunicar los resultados mediante un dashboard ejecutivo.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Herramientas y tecnologías</h2>
+
+        <div class="tools">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+            <span>Seaborn</span>
+            <span>SQL</span>
+            <span>PostgreSQL</span>
+            <span>Power BI / Tableau</span>
+            <span>Estadística</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Etapas del proyecto</h2>
+
+        <h3>1. Calidad y preparación de datos</h3>
+        <p>
+            Se cargaron y exploraron los datasets de pedidos,
+            catálogo y marketing. Se revisaron valores nulos,
+            duplicados, fechas, variables numéricas y consistencia
+            de los montos. Posteriormente se exportaron los
+            datasets limpios.
+        </p>
+
+        <h3>2. Rentabilidad del negocio</h3>
+        <p>
+            Se calcularon los ingresos, costos de productos,
+            inversión en marketing y profit. También se analizaron
+            el ticket promedio, la cantidad de productos y el
+            desempeño por categoría y canal.
+        </p>
+
+        <h3>3. Funnel de conversión con SQL</h3>
+        <p>
+            Se consultó la base de datos para medir los usuarios
+            que avanzan desde la primera visita hasta la compra,
+            identificando las etapas con mayor abandono.
+        </p>
+
+        <h3>4. Retención por cohortes</h3>
+        <p>
+            Se utilizaron tablas de usuarios y actividad para
+            analizar el comportamiento de los usuarios a partir
+            de su fecha de registro y su actividad posterior.
+        </p>
+
+        <h3>5. Experimento A/B</h3>
+        <p>
+            Se evaluó si un cambio en la interfaz del checkout
+            generaba una diferencia estadísticamente significativa
+            en la conversión de compra.
+        </p>
+
+        <h3>6. Dashboard de Business Intelligence</h3>
+        <p>
+            Se planteó una vista ejecutiva con indicadores
+            de ingresos, profit, marketing y ticket promedio,
+            además de una vista de detalle para explorar
+            órdenes y productos.
+        </p>
+    </section>
+
+    <section>
+        <h2>Resultados principales</h2>
+
+        <h3>Rentabilidad</h3>
+
+        <div class="kpi-grid">
+            <div class="kpi">
+                <strong>$9,610,018.94</strong>
+                <small>Revenue total</small>
+            </div>
+
+            <div class="kpi">
+                <strong>$3,828,869.01</strong>
+                <small>Costo total de productos</small>
+            </div>
+
+            <div class="kpi">
+                <strong>$2,871,843.53</strong>
+                <small>Inversión en marketing</small>
+            </div>
+
+            <div class="kpi">
+                <strong>$2,909,306.40</strong>
+                <small>Profit después de costos y marketing</small>
+            </div>
+        </div>
+
+        <div class="result">
+            <strong>Hallazgo:</strong>
+            Con los valores calculados de revenue, costo e inversión
+            en marketing, el negocio presenta un profit positivo.
+        </div>
+
+        <h3>Funnel de conversión</h3>
+
+        <div class="kpi-grid">
+            <div class="kpi">
+                <strong>7,796</strong>
+                <small>First visit</small>
+            </div>
+
+            <div class="kpi">
+                <strong>7,634</strong>
+                <small>Add to cart</small>
+            </div>
+
+            <div class="kpi">
+                <strong>6,250</strong>
+                <small>Add payment info</small>
+            </div>
+
+            <div class="kpi">
+                <strong>6,240</strong>
+                <small>Purchase</small>
+            </div>
+        </div>
+
+        <div class="result">
+            <strong>Hallazgo:</strong>
+            La mayor caída entre etapas ocurre entre agregar
+            al carrito y agregar la información de pago,
+            con un abandono aproximado del 18.13%.
+        </div>
+
+        <h3>Experimento A/B</h3>
+
+        <div class="kpi-grid">
+            <div class="kpi">
+                <strong>15.69%</strong>
+                <small>Conversión del grupo control</small>
+            </div>
+
+            <div class="kpi">
+                <strong>16.29%</strong>
+                <small>Conversión del grupo tratamiento</small>
+            </div>
+
+            <div class="kpi">
+                <strong>0.4161</strong>
+                <small>Valor p del test</small>
+            </div>
+        </div>
+
+        <div class="result">
+            <strong>Conclusión estadística:</strong>
+            Con un nivel de significancia de 0.05, no se encontró
+            evidencia suficiente para afirmar que el cambio
+            en el checkout produjo una diferencia significativa
+            en la conversión.
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusiones y aprendizaje</h2>
+
+        <p>
+            Este proyecto permitió integrar diferentes herramientas
+            y técnicas de análisis de datos para abordar preguntas
+            reales de negocio.
+        </p>
+
+        <ul>
+            <li>Preparación y validación de datos con Python.</li>
+            <li>Evaluación de rentabilidad mediante indicadores financieros.</li>
+            <li>Consultas SQL para analizar conversión y actividad.</li>
+            <li>Análisis de retención mediante cohortes.</li>
+            <li>Aplicación de pruebas estadísticas para evaluar experimentos.</li>
+            <li>Comunicación de resultados mediante Business Intelligence.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Archivos y entrega del proyecto</h2>
+
+        <p>
+            Consulta los recursos compartidos para revisar
+            los archivos de la entrega final.
+        </p>
+
+        <div class="file-links">
+            <a href="https://drive.google.com/file/d/1GTh-DFI98RIxE7f6nGBJkUPm7-xnCN0u/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">
+                Abrir recurso de entrega 1
+            </a>
+
+            <a href="https://drive.google.com/file/d/1a0cXxYX-k60IOJ44cRcZGujqq2JvoYL4/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">
+                Abrir recurso de entrega 2
+            </a>
+
+            <a href="https://drive.google.com/file/d/1PV8UO-gDS4Yl_X0AuO0hob1qWCz9H_12/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">
+                Abrir recurso de entrega 3
+            </a>
+
+            <a href="https://drive.google.com/file/d/1Vrpgs4GTrvxgtm6jRjzsCsnaVXhQoQpG/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">
+                Abrir recurso de entrega 4
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Evaluación del proyecto</h2>
+
+        <p>
+            Durante la revisión se destacaron el proceso de limpieza
+            de datos, el análisis de rentabilidad, el uso de SQL
+            para el funnel, el planteamiento del análisis de cohortes
+            y la aplicación del test estadístico para el experimento A/B.
+        </p>
+
+        <p>
+            También se valoró el cierre del proyecto con una propuesta
+            de dashboard que integra indicadores y visualizaciones
+            para comunicar los resultados del negocio.
+        </p>
+    </section>
+
+    <a class="button" href="index.html">
+        Volver al portafolio
+    </a>
+
+</main>
+
+<footer>
+    <p>© 2026 Esperanza García | Portafolio de Análisis de Datos</p>
+</footer>
+
+</body>
+</html>
