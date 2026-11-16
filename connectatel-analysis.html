@@ -1,1 +1,380 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectaTel | Análisis de Datos</title>
+
+    <meta name="description" content="Análisis del comportamiento de clientes de telecomunicaciones con Python.">
+
+    <style>
+        :root {
+            --navy: #142b43;
+            --blue: #246b8e;
+            --teal: #48a6a1;
+            --light: #f4f7fa;
+            --white: #ffffff;
+            --text: #34475a;
+            --muted: #718096;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px #142b4310;
+        }
+
+        .logo {
+            color: var(--navy);
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #142b43, #246b8e);
+            color: white;
+            text-align: center;
+            padding: 90px 8%;
+        }
+
+        .hero .tag {
+            color: #a9e2dc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #e2edf4;
+            font-size: 18px;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #142b430c;
+            border: 1px solid #e8edf2;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e8f4f3;
+            color: #267c78;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 5px 4px 0 0;
+            font-size: 13px;
+        }
+
+        .dataset-list {
+            padding-left: 22px;
+        }
+
+        .dataset-list li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            border-left: 4px solid var(--teal);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+        }
+
+        .conclusion {
+            background: white;
+            max-width: none;
+        }
+
+        .conclusion-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .back {
+            text-align: center;
+            padding: 45px 8%;
+        }
+
+        footer {
+            background: #0d2033;
+            color: #cbd5df;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Esperanza García</div>
+    <a href="index.html">← Volver al portafolio</a>
+</header>
+
+<main>
+
+    <div class="hero">
+        <p class="tag">Proyecto de análisis de datos</p>
+
+        <h1>ConnectaTel</h1>
+
+        <p>
+            Análisis del comportamiento de clientes de una empresa
+            de telecomunicaciones en Latinoamérica, utilizando
+            herramientas de análisis y visualización de datos.
+        </p>
+    </div>
+
+    <section>
+        <h2 class="section-title">1. Descripción del proyecto</h2>
+
+        <p>
+            ConnectaTel es un proyecto de análisis de datos enfocado
+            en comprender el comportamiento de los clientes de una
+            empresa de telecomunicaciones durante el año 2024.
+        </p>
+
+        <p>
+            El objetivo es explorar los patrones de consumo,
+            identificar características de los usuarios y generar
+            información útil para apoyar decisiones comerciales.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title">2. Objetivos del análisis</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Comportamiento del cliente</h3>
+                <p>
+                    Explorar los patrones de uso de los servicios
+                    de telecomunicaciones.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Segmentación</h3>
+                <p>
+                    Analizar los clientes según sus características
+                    y hábitos de consumo.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Detección de valores atípicos</h3>
+                <p>
+                    Identificar observaciones inusuales que puedan
+                    afectar la interpretación de los datos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Recomendaciones</h3>
+                <p>
+                    Generar propuestas orientadas a mejorar
+                    la experiencia y retención de clientes.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">3. Datos utilizados</h2>
+
+        <p class="section-intro">
+            El proyecto trabaja con tres conjuntos de datos:
+        </p>
+
+        <div class="card">
+            <ul class="dataset-list">
+                <li>
+                    <strong>plans.csv:</strong>
+                    información sobre los planes de telecomunicaciones,
+                    precios y servicios incluidos.
+                </li>
+
+                <li>
+                    <strong>users.csv:</strong>
+                    información y características de los clientes.
+                </li>
+
+                <li>
+                    <strong>usage.csv:</strong>
+                    registros de utilización de los servicios.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">4. Herramientas utilizadas</h2>
+
+        <div class="card">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Jupyter Notebook</span>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">5. Metodología</h2>
+
+        <div class="card">
+            <h3>Limpieza y preparación</h3>
+            <p>
+                Revisión de estructuras, tipos de datos,
+                valores faltantes y consistencia de la información.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Análisis exploratorio</h3>
+            <p>
+                Exploración de variables, distribución de datos
+                y patrones de utilización de los servicios.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Segmentación de clientes</h3>
+            <p>
+                Evaluación de características demográficas
+                y hábitos de consumo.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Visualización e interpretación</h3>
+            <p>
+                Representación gráfica de los datos para
+                facilitar la identificación de patrones.
+            </p>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <div class="conclusion-content">
+            <h2 class="section-title">6. Conclusiones y recomendaciones</h2>
+
+            <p>
+                El análisis busca convertir los datos de utilización
+                y características de los clientes en información
+                relevante para identificar oportunidades comerciales,
+                mejorar la segmentación y apoyar estrategias
+                de retención.
+            </p>
+
+            <p>
+                Las conclusiones específicas se presentan a partir
+                de los resultados obtenidos en el análisis.
+            </p>
+        </div>
+    </section>
+
+    <div class="back">
+        <a class="btn" href="index.html">
+            Volver al portafolio
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Esperanza García | Data Analytics Portfolio
+</footer>
+
+</body>
+</html>
+
