@@ -1,21 +1,664 @@
 
-<div class="card">
 
-    <h3>Análisis de Datos Musicales</h3>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <p>
-        Exploración de datos de reproducción musical
-        para identificar patrones de escucha, géneros
-        musicales y preferencias de usuarios en
-        diferentes ciudades.
-    </p>
+    <title>Análisis de Datos Musicales | Esperanza García</title>
 
-    <span class="skill-tag">Python</span>
-    <span class="skill-tag">Pandas</span>
-    <span class="skill-tag">Jupyter Notebook</span>
+    <meta name="description" content="Proyecto de análisis de datos musicales con Python. Exploración de hábitos de escucha en Springfield y Shelbyville.">
 
-    <a class="btn" href="music-analysis.html">
-        Ver proyecto
-    </a>
+    <style>
+        :root {
+            --navy: #142b43;
+            --blue: #246b8e;
+            --teal: #48a6a1;
+            --light: #f4f7fa;
+            --white: #ffffff;
+            --text: #34475a;
+            --muted: #718096;
+        }
 
-</div>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px #142b4310;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: var(--navy);
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #142b43, #246b8e);
+            color: white;
+            text-align: center;
+            padding: 90px 8%;
+        }
+
+        .hero .tag {
+            color: #a9e2dc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #e2edf4;
+            font-size: 18px;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #142b430c;
+            border: 1px solid #e8edf2;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e8f4f3;
+            color: #267c78;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 5px 4px 0 0;
+            font-size: 13px;
+        }
+
+        .metric {
+            color: var(--navy);
+            font-size: 30px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .highlight {
+            border-left: 4px solid var(--teal);
+        }
+
+        .dataset-list {
+            padding-left: 22px;
+        }
+
+        .dataset-list li {
+            margin-bottom: 10px;
+        }
+
+        .conclusion {
+            background: white;
+            max-width: none;
+        }
+
+        .conclusion-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .back {
+            text-align: center;
+            padding: 45px 8%;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+        }
+
+        footer {
+            background: #0d2033;
+            color: #cbd5df;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Esperanza García</div>
+    <a href="index.html">← Volver al portafolio</a>
+</header>
+
+<main>
+
+    <!-- PRESENTACIÓN -->
+
+    <div class="hero">
+
+        <p class="tag">Proyecto de análisis de datos</p>
+
+        <h1>Análisis de Datos Musicales</h1>
+
+        <p>
+            Exploración de los hábitos de escucha musical
+            de los usuarios de Springfield y Shelbyville,
+            utilizando Python para identificar patrones
+            de reproducción según la ciudad y el día
+            de la semana.
+        </p>
+
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+
+    <section>
+
+        <h2 class="section-title">1. Descripción del proyecto</h2>
+
+        <p>
+            Este proyecto tiene como objetivo analizar los hábitos
+            de reproducción musical de los usuarios de dos ciudades:
+            Springfield y Shelbyville.
+        </p>
+
+        <p>
+            A través de un conjunto de datos con información sobre
+            canciones, artistas, géneros musicales, ciudades y días
+            de reproducción, se busca identificar diferencias en
+            el comportamiento de escucha de los usuarios.
+        </p>
+
+        <div class="card highlight">
+            <h3>Pregunta principal del análisis</h3>
+
+            <p>
+                ¿El comportamiento de los usuarios respecto a la
+                música que escuchan varía según la ciudad y el día
+                de la semana?
+            </p>
+        </div>
+
+    </section>
+
+    <!-- OBJETIVOS -->
+
+    <section>
+
+        <h2 class="section-title">2. Objetivos del análisis</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Exploración de datos</h3>
+
+                <p>
+                    Examinar la estructura del conjunto de datos,
+                    sus columnas y los tipos de información disponibles.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Limpieza de datos</h3>
+
+                <p>
+                    Identificar y tratar valores ausentes,
+                    duplicados y problemas en los encabezados.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Comparación de ciudades</h3>
+
+                <p>
+                    Analizar las diferencias en la cantidad
+                    de reproducciones entre Springfield y Shelbyville.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Análisis por día</h3>
+
+                <p>
+                    Comparar la actividad musical de los usuarios
+                    durante los lunes y viernes.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DATOS -->
+
+    <section>
+
+        <h2 class="section-title">3. Datos utilizados</h2>
+
+        <p class="section-intro">
+            El análisis utiliza el archivo music_project_en.csv,
+            que contiene información registrada sobre la actividad
+            musical de los usuarios.
+        </p>
+
+        <div class="card">
+
+            <ul class="dataset-list">
+
+                <li>
+                    <strong>user_id:</strong>
+                    identificador único del usuario.
+                </li>
+
+                <li>
+                    <strong>track:</strong>
+                    título de la canción reproducida.
+                </li>
+
+                <li>
+                    <strong>artist:</strong>
+                    nombre del artista.
+                </li>
+
+                <li>
+                    <strong>genre:</strong>
+                    género musical.
+                </li>
+
+                <li>
+                    <strong>city:</strong>
+                    ciudad del usuario.
+                </li>
+
+                <li>
+                    <strong>time:</strong>
+                    hora de reproducción.
+                </li>
+
+                <li>
+                    <strong>day:</strong>
+                    día de la semana.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- HERRAMIENTAS -->
+
+    <section>
+
+        <h2 class="section-title">4. Herramientas utilizadas</h2>
+
+        <div class="card">
+
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Jupyter Notebook</span>
+            <span class="skill-tag">CSV</span>
+            <span class="skill-tag">Análisis exploratorio</span>
+
+        </div>
+
+    </section>
+
+    <!-- METODOLOGÍA -->
+
+    <section>
+
+        <h2 class="section-title">5. Metodología</h2>
+
+        <div class="card">
+
+            <h3>5.1. Exploración inicial</h3>
+
+            <p>
+                Se importó la biblioteca Pandas y se cargó el
+                conjunto de datos para examinar sus primeras
+                filas, columnas y tipos de datos mediante
+                los métodos head() e info().
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>5.2. Limpieza y preparación</h3>
+
+            <p>
+                Se normalizaron los nombres de las columnas,
+                eliminando espacios innecesarios y convirtiendo
+                los encabezados a minúsculas.
+            </p>
+
+            <p>
+                Se identificaron valores ausentes en las columnas
+                track, artist y genre, que fueron sustituidos
+                por la categoría unknown.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>5.3. Tratamiento de duplicados</h3>
+
+            <p>
+                Se identificaron 3.826 registros duplicados
+                explícitos y se eliminaron para evitar que
+                afectaran los resultados.
+            </p>
+
+            <p>
+                También se examinaron posibles inconsistencias
+                en los nombres de los géneros musicales.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>5.4. Análisis comparativo</h3>
+
+            <p>
+                Se utilizaron filtros y agrupaciones con
+                groupby() para contar las reproducciones
+                según la ciudad y el día de la semana.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTADOS DE LIMPIEZA -->
+
+    <section>
+
+        <h2 class="section-title">6. Resultados del preprocesamiento</h2>
+
+        <p class="section-intro">
+            Durante la preparación de los datos se identificaron
+            los siguientes problemas:
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Registros iniciales</h3>
+                <p class="metric">65.079</p>
+                <p>Filas en el conjunto de datos original.</p>
+            </div>
+
+            <div class="card">
+                <h3>Duplicados</h3>
+                <p class="metric">3.826</p>
+                <p>Registros duplicados explícitos identificados y eliminados.</p>
+            </div>
+
+            <div class="card">
+                <h3>Registros restantes</h3>
+                <p class="metric">61.253</p>
+                <p>Filas después de eliminar los duplicados explícitos.</p>
+            </div>
+
+            <div class="card">
+                <h3>Valores ausentes</h3>
+                <p class="metric">10.108</p>
+                <p>Valores ausentes identificados en tres columnas antes de su sustitución.</p>
+            </div>
+
+        </div>
+
+        <div class="card highlight">
+
+            <h3>Tratamiento de valores ausentes</h3>
+
+            <p>
+                Los valores ausentes se distribuyeron de la siguiente manera:
+            </p>
+
+            <ul class="dataset-list">
+                <li>track: 1.343 valores.</li>
+                <li>artist: 7.567 valores.</li>
+                <li>genre: 1.198 valores.</li>
+            </ul>
+
+            <p>
+                Se sustituyeron por unknown para conservar
+                los registros y facilitar el análisis posterior.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTADOS -->
+
+    <section>
+
+        <h2 class="section-title">7. Resultados del análisis</h2>
+
+        <p class="section-intro">
+            Se comparó la cantidad de canciones reproducidas
+            en Springfield y Shelbyville durante dos días
+            de la semana: lunes y viernes.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Springfield – Lunes</h3>
+
+                <p class="metric">15.740</p>
+
+                <p>Reproducciones registradas.</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Springfield – Viernes</h3>
+
+                <p class="metric">15.945</p>
+
+                <p>Reproducciones registradas.</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Shelbyville – Lunes</h3>
+
+                <p class="metric">5.614</p>
+
+                <p>Reproducciones registradas.</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Shelbyville – Viernes</h3>
+
+                <p class="metric">5.895</p>
+
+                <p>Reproducciones registradas.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card highlight">
+
+            <h3>Comparación de resultados</h3>
+
+            <p>
+                Springfield presentó un incremento de 205
+                reproducciones entre lunes y viernes.
+            </p>
+
+            <p>
+                Shelbyville registró un incremento de 281
+                reproducciones durante el mismo período.
+            </p>
+
+            <p>
+                En ambas ciudades se observó una mayor actividad
+                musical los viernes en comparación con los lunes.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONCLUSIONES -->
+
+    <section class="conclusion">
+
+        <div class="conclusion-content">
+
+            <h2 class="section-title">8. Conclusiones</h2>
+
+            <p>
+                El análisis permitió identificar diferencias
+                en los hábitos de reproducción musical entre
+                Springfield y Shelbyville.
+            </p>
+
+            <p>
+                Springfield presentó una mayor cantidad de
+                reproducciones en ambos días analizados,
+                mientras que Shelbyville también mostró
+                un incremento de actividad los viernes.
+            </p>
+
+            <p>
+                Los resultados indican que la actividad musical
+                fue mayor los viernes que los lunes en ambas
+                ciudades. En Springfield se registraron 15.945
+                reproducciones el viernes frente a 15.740
+                el lunes. En Shelbyville se registraron 5.895
+                frente a 5.614, respectivamente.
+            </p>
+
+            <p>
+                Durante el preprocesamiento se corrigieron
+                los encabezados, se identificaron y trataron
+                los valores ausentes y se eliminaron los
+                registros duplicados explícitos.
+            </p>
+
+            <p>
+                Estas acciones permitieron mejorar la calidad
+                de los datos y obtener resultados más confiables
+                para la comparación.
+            </p>
+
+            <p>
+                En conclusión, los datos muestran diferencias
+                en la cantidad de reproducciones según la ciudad
+                y el día de la semana.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- REGRESO -->
+
+    <div class="back">
+
+        <a class="btn" href="index.html">
+            Volver al portafolio
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+
+    © 2026 Esperanza García | Portafolio de Análisis de Datos
+
+</footer>
+
+</body>
+</html>
