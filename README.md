@@ -1,29 +1,79 @@
-# Esperanza Garcia | Data Analytics Portafolio
+# ¡Hola! Soy Esperanza García Cortes 👋
 
-Welcome to my Data Analytics Portfolio!
+### Analista de Datos Junior | Análisis de Datos e Inteligencia de Negocios
 
-I am developing my skills in data analytics, focusing on transforming data into meaningful business insights.
+Soy profesional en Administración de Empresas, con más de 10 años de experiencia en Recursos Humanos, nómina, servicio al cliente y procesos administrativos y financieros.
 
-## Technical Skills
+Actualmente estoy enfocando mi carrera en el análisis de datos, combinando mi experiencia empresarial con herramientas tecnológicas para transformar información en conocimiento útil para la toma de decisiones.
 
+Me interesa analizar datos, identificar tendencias, encontrar oportunidades de mejora y desarrollar soluciones que permitan optimizar procesos y generar valor para las empresas.
+
+---
+
+## 🛠️ Herramientas y tecnologías
+
+**Lenguajes y análisis de datos**
 - Python
+- Pandas
+- NumPy
+
+**Bases de datos**
 - SQL
-- Data Analysis
-- Data Cleaning
-- Data Visualization
-- Jupyter Notebook
 
-## Projects
+**Visualización y Business Intelligence**
+- Power BI
+- Tableau
 
-### Python Projects
+**Hojas de cálculo y análisis**
+- Microsoft Excel
+- Google Sheets
 
-- [2-Sprit](./2-Sprit.ipynb)
-- [5-Sprit](./5-Sprit.ipynb)
+---
 
-## Career Objective
+## 📊 Mis proyectos
 
-My goal is to develop my career as a Junior Data Analyst in Canada, applying analytical thinking and technical skills to support data-driven business decisions.
+En este portafolio encontrarás proyectos prácticos de análisis de datos, enfocados en resolver problemas empresariales y obtener conclusiones a partir de la información.
 
-## Contact
+### 🐍 Python
+- Limpieza y transformación de datos.
+- Análisis exploratorio de datos.
+- Segmentación de clientes.
+- Análisis de comportamiento y resultados comerciales.
 
-- GitHub: [Esperanzag-18](https://github.com/Esperanzag-18)
+### 📈 Power BI y Tableau
+- Creación de dashboards.
+- Visualización de indicadores de gestión (KPI).
+- Análisis de resultados empresariales.
+- Presentación de información para apoyar la toma de decisiones.
+
+### 🗄️ SQL
+- Consultas y extracción de información.
+- Filtrado y organización de datos.
+- Análisis de bases de datos.
+
+### 📑 Excel y Google Sheets
+- Organización y limpieza de información.
+- Fórmulas y funciones.
+- Análisis y elaboración de reportes.
+- Automatización y optimización de tareas.
+
+*Cada proyecto contará con su propia descripción, herramientas utilizadas, objetivos y resultados.*
+
+---
+
+## 💼 Mi experiencia profesional
+
+Mi trayectoria en áreas administrativas y de Recursos Humanos me ha permitido desarrollar habilidades que hoy aplico al análisis de datos:
+
+- Análisis y organización de información.
+- Gestión de nómina y procesos administrativos.
+- Atención al cliente y resolución de problemas.
+- Seguimiento de indicadores y procesos.
+- Identificación de oportunidades de mejora.
+- Pensamiento analítico y orientación a resultados.
+
+---
+
+## 🎯 Mi objetivo profesional
+
+Desarrollarme como Analista de Datos, participando en proyectos donde pueda combinar el conocimiento del negocio con el análisis de información, la visualización de datos
