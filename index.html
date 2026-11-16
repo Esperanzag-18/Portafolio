@@ -5,232 +5,507 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Esperanza García | Portafolio</title>
+    <title>Esperanza García | Data Analyst Portfolio</title>
 
-    <meta name="description" content="Portafolio profesional de Esperanza García. Proyectos de análisis de datos con Python, SQL y herramientas de visualización.">
+    <meta name="description" content="Portafolio profesional de Esperanza García. Proyectos de análisis de datos con Python, SQL, Power BI, Tableau y visualización de datos.">
+
+    <meta name="author" content="Esperanza García">
+    <meta name="theme-color" content="#101c35">
 
     <style>
         :root {
-            --navy: #142b43;
-            --blue: #246b8e;
-            --teal: #48a6a1;
-            --light: #f4f7fa;
+            --navy: #101c35;
+            --navy-light: #1b2d50;
+            --blue: #3978d4;
+            --teal: #25b6aa;
+            --background: #f4f7fb;
             --white: #ffffff;
-            --text: #34475a;
-            --muted: #718096;
+            --text: #263449;
+            --muted: #68778d;
+            --border: #e2e8f0;
+            --shadow: 0 12px 35px rgba(16, 28, 53, 0.08);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 85px;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: var(--light);
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--background);
             color: var(--text);
             line-height: 1.7;
         }
 
-        header {
-            background: var(--white);
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 12px #142b4310;
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVEGACIÓN */
+
+        .navbar {
+            background: rgba(16, 28, 53, 0.97);
+            color: white;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
         }
 
-        .logo {
-            color: var(--navy);
-            font-size: 21px;
-            font-weight: bold;
-        }
-
-        nav {
+        .nav-content {
+            min-height: 72px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
             gap: 20px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 14px;
-            font-weight: bold;
+        .logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 750;
+            letter-spacing: 0.3px;
         }
 
-        nav a:hover {
+        .logo span {
             color: var(--teal);
         }
 
-        .hero {
-            background: linear-gradient(135deg, #142b43, #246b8e);
-            color: white;
-            padding: 100px 8%;
-            text-align: center;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
         }
 
-        .hero .tag {
-            color: #a9e2dc;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 13px;
+        .nav-links a {
+            color: #e5edf8;
+            font-size: 0.92rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        /* PRESENTACIÓN */
+
+        .hero {
+            background:
+                radial-gradient(circle at 85% 20%, rgba(37,182,170,0.18), transparent 28%),
+                linear-gradient(125deg, #101c35, #1d3964);
+            color: white;
+            padding: 105px 0 100px;
+        }
+
+        .hero-content {
+            max-width: 820px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #78ded3;
+            border: 1px solid rgba(120,222,211,0.4);
+            background: rgba(37,182,170,0.09);
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 650;
+            margin-bottom: 23px;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: clamp(36px, 6vw, 58px);
-            margin: 15px 0;
+            font-size: clamp(2.5rem, 6vw, 4.3rem);
+            line-height: 1.12;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
         }
 
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto 28px;
-            color: #e2edf4;
-            font-size: 18px;
+        .hero h1 span {
+            color: var(--teal);
+        }
+
+        .hero-description {
+            color: #d5dfed;
+            font-size: 1.12rem;
+            max-width: 690px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
         }
 
         .btn {
             display: inline-block;
-            background: var(--teal);
-            color: white;
-            padding: 12px 25px;
+            padding: 12px 22px;
             border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s;
+            font-weight: 700;
+            transition: transform 0.2s, background 0.2s;
         }
 
         .btn:hover {
-            background: var(--blue);
+            transform: translateY(-2px);
         }
 
-        section {
-            padding: 75px 8%;
-            max-width: 1200px;
-            margin: auto;
+        .btn-primary {
+            background: var(--teal);
+            color: #102a35;
         }
 
-        .section-title {
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.55);
+            color: white;
+        }
+
+        /* SECCIONES */
+
+        .section {
+            padding: 82px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+            max-width: 720px;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-weight: 750;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
             color: var(--navy);
-            font-size: 32px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            line-height: 1.25;
             margin-bottom: 12px;
         }
 
-        .section-intro {
+        .section-heading p {
             color: var(--muted);
-            margin-bottom: 30px;
         }
 
-        .about {
-            background: white;
-            max-width: none;
+        /* SOBRE MÍ */
+
+        .about-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
 
-        .about-content {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .about-content p {
+        .about-card p {
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
-        .skills,
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 22px;
-            margin-top: 30px;
+        .about-card p:last-child {
+            margin-bottom: 0;
         }
 
-        .card {
+        /* HABILIDADES */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .skill-card {
             background: white;
-            padding: 25px;
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 5px 20px #142b430c;
-            border: 1px solid #e8edf2;
+            padding: 24px 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card h3 {
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* PROYECTOS */
+
+        .projects-section {
+            background: #edf2f8;
+        }
+
+        .project-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 27px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            max-width: 360px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d6deea;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            background: white;
+        }
+
+        .search-box input:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(57,120,212,0.12);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            border: 1px solid #d3dce9;
+            background: white;
+            color: var(--text);
+            padding: 9px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 650;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: white;
+        }
+
+        .project-count {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 23px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 27px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            min-height: 310px;
+            box-shadow: 0 5px 18px rgba(16,28,53,0.04);
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
-        .card h3 {
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-number {
             color: var(--blue);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
             margin-bottom: 12px;
         }
 
-        .card p {
-            font-size: 15px;
+        .project-card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
             color: var(--muted);
-            margin-bottom: 12px;
+            font-size: 0.94rem;
+            margin-bottom: 18px;
         }
 
-        .skill-tag {
-            display: inline-block;
-            background: #e8f4f3;
-            color: #267c78;
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin: 5px 4px 0 0;
-            font-size: 13px;
-        }
-
-        .card .btn {
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
             margin-top: auto;
+            margin-bottom: 22px;
         }
 
-        .contact {
+        .tag {
+            background: #edf3fb;
+            color: #31547e;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.77rem;
+            font-weight: 650;
+        }
+
+        .project-link {
+            color: var(--blue);
+            font-weight: 750;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.92rem;
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            color: var(--teal);
+        }
+
+        .project-link span {
+            transition: transform 0.2s;
+        }
+
+        .project-link:hover span {
+            transform: translateX(4px);
+        }
+
+        .no-results {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            color: var(--muted);
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        /* CONTACTO */
+
+        .contact-section {
             background: var(--navy);
             color: white;
-            max-width: none;
             text-align: center;
+            padding: 75px 20px;
         }
 
-        .contact h2 {
-            color: white;
+        .contact-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 13px;
         }
 
-        .contact p {
-            color: #dce7ef;
-            margin: 12px 0 25px;
+        .contact-section p {
+            color: #d0dbea;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
+
+        /* FOOTER */
 
         footer {
-            background: #0d2033;
-            color: #cbd5df;
+            background: #0b1427;
+            color: #aab8ca;
             text-align: center;
-            padding: 20px;
-            font-size: 13px;
+            padding: 22px 15px;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
         }
 
         @media (max-width: 650px) {
-            header {
-                justify-content: center;
+            .nav-content {
+                flex-direction: column;
+                padding: 14px 0;
             }
 
-            nav {
+            .nav-links {
+                flex-wrap: wrap;
                 justify-content: center;
-                gap: 12px;
+                gap: 12px 18px;
             }
 
             .hero {
-                padding: 70px 6%;
+                padding: 75px 0;
             }
 
-            section {
-                padding: 55px 6%;
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-controls {
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .about-card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-buttons .btn {
+                text-align: center;
             }
         }
     </style>
@@ -238,219 +513,563 @@
 
 <body>
 
-    <header>
-        <div class="logo">Esperanza García</div>
+    <!-- NAVEGACIÓN -->
 
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="container nav-content">
 
-    <main>
-
-        <!-- INICIO -->
-        <div class="hero" id="inicio">
-
-            <p class="tag">Portafolio profesional</p>
-
-            <h1>Hola, soy Esperanza</h1>
-
-            <p>
-                Analista de datos en formación, apasionada por transformar
-                información en conocimientos que ayuden a tomar mejores decisiones.
-            </p>
-
-            <a class="btn" href="#proyectos">
-                Conoce mis proyectos
+            <a href="#inicio" class="logo">
+                EG<span>.</span> Portfolio
             </a>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
 
         </div>
+    </nav>
 
-        <!-- SOBRE MI -->
-        <section class="about" id="sobre-mi">
 
-            <div class="about-content">
+    <!-- PRESENTACIÓN -->
 
-                <h2 class="section-title">Sobre mí</h2>
+    <header class="hero" id="inicio">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    DATA ANALYST PORTFOLIO
+                </span>
+
+                <h1>
+                    Hola, soy <span>Esperanza García</span>
+                </h1>
+
+                <p class="hero-description">
+                    Analista de datos en formación, con experiencia
+                    profesional en áreas administrativas, recursos
+                    humanos y servicio al cliente. Me interesa
+                    transformar datos en información clara que
+                    ayude a comprender problemas y tomar mejores
+                    decisiones de negocio.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#proyectos" class="btn btn-primary">
+                        Explorar proyectos
+                    </a>
+
+                    <a
+                        href="https://github.com/Esperanzag-18"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline">
+                        Visitar GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- SOBRE MÍ -->
+
+    <section class="section" id="sobre-mi">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-label">Perfil profesional</div>
+                <h2>Sobre mí</h2>
+                <p>
+                    Una combinación de experiencia de negocio,
+                    pensamiento analítico y aprendizaje tecnológico.
+                </p>
+            </div>
+
+            <div class="about-card">
 
                 <p>
-                    Soy una profesional con formación en General Business
-                    y experiencia en áreas administrativas, servicio al
-                    cliente y gestión de procesos.
+                    Soy Esperanza García y cuento con más de 10 años
+                    de experiencia en áreas relacionadas con recursos
+                    humanos, nómina, atención al cliente y servicios
+                    financieros.
                 </p>
 
                 <p>
-                    Actualmente estoy desarrollando mis habilidades en
-                    análisis de datos, utilizando herramientas como Python,
-                    SQL y herramientas de visualización.
+                    Actualmente estoy enfocada en desarrollar mis
+                    habilidades en análisis de datos, utilizando
+                    herramientas como Python, SQL y plataformas
+                    de visualización para explorar información,
+                    identificar patrones y comunicar resultados.
                 </p>
 
                 <p>
-                    Mi objetivo es convertir datos en información clara
-                    y útil para apoyar la toma de decisiones.
+                    Mi objetivo es aportar una perspectiva analítica
+                    a los problemas de negocio, combinando mi
+                    experiencia profesional con herramientas
+                    modernas de análisis y visualización.
                 </p>
 
             </div>
 
-        </section>
+        </div>
+    </section>
 
-        <!-- HABILIDADES -->
-        <section id="habilidades">
 
-            <h2 class="section-title">Mis habilidades</h2>
+    <!-- HABILIDADES -->
 
-            <p class="section-intro">
-                Herramientas y conocimientos que estoy desarrollando.
-            </p>
+    <section class="section" id="habilidades">
+        <div class="container">
 
-            <div class="skills">
+            <div class="section-heading">
+                <div class="section-label">Conocimientos técnicos</div>
+                <h2>Habilidades y herramientas</h2>
+                <p>
+                    Tecnologías y competencias aplicadas en mis
+                    proyectos de análisis de datos.
+                </p>
+            </div>
 
-                <div class="card">
+            <div class="skills-grid">
+
+                <article class="skill-card">
                     <h3>Python</h3>
-                    <p>Análisis, limpieza y exploración de datos.</p>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                </div>
+                    <p>
+                        Pandas, NumPy, limpieza de datos,
+                        exploración y análisis.
+                    </p>
+                </article>
 
-                <div class="card">
+                <article class="skill-card">
                     <h3>SQL</h3>
-                    <p>Consultas, filtros y análisis de bases de datos.</p>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                </div>
+                    <p>
+                        Consultas, filtros, agrupaciones,
+                        joins y análisis de bases de datos.
+                    </p>
+                </article>
 
-                <div class="card">
+                <article class="skill-card">
+                    <h3>Power BI</h3>
+                    <p>
+                        Dashboards, indicadores, modelado
+                        de datos y medidas DAX.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Tableau</h3>
+                    <p>
+                        Visualización de información,
+                        dashboards y análisis comercial.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Estadística</h3>
+                    <p>
+                        Análisis descriptivo, pruebas de hipótesis
+                        y experimentos A/B.
+                    </p>
+                </article>
+
+                <article class="skill-card">
                     <h3>Visualización</h3>
-                    <p>Presentación de resultados e interpretación de información.</p>
-                    <span class="skill-tag">Matplotlib</span>
-                    <span class="skill-tag">Seaborn</span>
-                    <span class="skill-tag">Tableau</span>
+                    <p>
+                        Matplotlib, Seaborn y comunicación
+                        de hallazgos mediante gráficos.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Excel</h3>
+                    <p>
+                        Organización, análisis y manejo
+                        de información tabular.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Análisis de negocio</h3>
+                    <p>
+                        KPIs, rentabilidad, conversión,
+                        retención y recomendaciones.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROYECTOS -->
+
+    <section class="section projects-section" id="proyectos">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-label">Mi trabajo</div>
+                <h2>Proyectos de análisis de datos</h2>
+                <p>
+                    Una selección de proyectos donde aplico
+                    herramientas de análisis, programación,
+                    SQL y visualización para resolver problemas
+                    de negocio.
+                </p>
+            </div>
+
+            <!-- BUSCADOR Y FILTROS -->
+
+            <div class="project-controls">
+
+                <div class="search-box">
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Buscar proyectos o herramientas..."
+                        aria-label="Buscar proyectos">
+                </div>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">
+                        Todos
+                    </button>
+
+                    <button class="filter-btn" data-filter="python">
+                        Python
+                    </button>
+
+                    <button class="filter-btn" data-filter="sql">
+                        SQL
+                    </button>
+
+                    <button class="filter-btn" data-filter="bi">
+                        Power BI / Tableau
+                    </button>
                 </div>
 
             </div>
 
-        </section>
-
-        <!-- PROYECTOS -->
-        <section id="proyectos">
-
-            <h2 class="section-title">Mis proyectos</h2>
-
-            <p class="section-intro">
-                Una selección de mis trabajos y proyectos de análisis de datos.
+            <p class="project-count" id="projectCount">
+                Mostrando 6 proyectos
             </p>
 
-            <div class="projects">
 
-                <!-- PROYECTO 1 -->
-                <div class="card">
+            <div class="projects-grid" id="projectsGrid">
 
-                    <h3>Store 1 – Customer Analysis</h3>
 
-                    <p>
-                        Proyecto de análisis de clientes para explorar
-                        patrones de comportamiento y compra mediante
-                        herramientas de análisis de datos.
-                    </p>
+                <!-- PROYECTO 1: STORE 1 -->
 
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Pandas</span>
+                <article class="project-card"
+                    data-category="python"
+                    data-search="store 1 análisis clientes compras python pandas">
 
-                </div>
+                    <div class="project-number">PROYECTO 01</div>
 
-                <!-- PROYECTO 2 -->
-                <div class="card">
-
-                    <h3>Music Analysis – TripleTen</h3>
+                    <h3>Análisis de clientes y compras – Store 1</h3>
 
                     <p>
-                        Análisis de datos de reproducción musical para
-                        explorar patrones de escucha, géneros musicales
-                        y preferencias de usuarios en diferentes ciudades.
+                        Proyecto de análisis de datos enfocado en
+                        explorar el comportamiento de clientes
+                        y las compras de una tienda. Incluye
+                        preparación, exploración y análisis
+                        de información.
                     </p>
 
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Jupyter Notebook</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">EDA</span>
+                    </div>
 
-                    <a class="btn" href="music-analysis.html">
-                        Ver proyecto
+                    <a
+                        href="https://github.com/Esperanzag-18"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">
+                        Explorar en GitHub <span>→</span>
                     </a>
 
-                </div>
+                </article>
 
-                <!-- PROYECTO 3 -->
-                <div class="card">
 
-                    <h3>ConnectaTel – Telecomunicaciones</h3>
+                <!-- PROYECTO 2: MUSIC ANALYSIS -->
+
+                <article class="project-card"
+                    data-category="python"
+                    data-search="music analysis análisis musical springfield shelbyville python pandas">
+
+                    <div class="project-number">PROYECTO 02</div>
+
+                    <h3>Análisis de Datos Musicales</h3>
 
                     <p>
-                        Análisis del comportamiento de clientes de una
-                        empresa de telecomunicaciones en Latinoamérica
-                        durante el año 2024.
+                        Análisis del comportamiento musical de
+                        usuarios de Springfield y Shelbyville.
+                        Se exploran preferencias, patrones de
+                        escucha y diferencias entre ciudades
+                        utilizando datos reales del proyecto.
                     </p>
 
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Matplotlib</span>
-                    <span class="skill-tag">Seaborn</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Jupyter Notebook</span>
+                    </div>
 
-                    <a class="btn" href="connectatel-analysis.html">
-                        Ver proyecto
+                    <a href="music-analysis.html" class="project-link">
+                        Ver proyecto <span>→</span>
                     </a>
 
-                </div>
+                </article>
 
-                <!-- PROYECTO 4 -->
-                <div class="card">
 
-                    <h3>Proyecto de SQL</h3>
+                <!-- PROYECTO 3: CONNECTATEL -->
+
+                <article class="project-card"
+                    data-category="python"
+                    data-search="connectatel telecomunicaciones clientes comportamiento planes python pandas matplotlib seaborn">
+
+                    <div class="project-number">PROYECTO 03</div>
+
+                    <h3>ConnectaTel – Análisis de Telecomunicaciones</h3>
 
                     <p>
-                        Espacio reservado para presentar consultas,
-                        exploración y proyectos de análisis con
-                        bases de datos.
+                        Evaluación del comportamiento de clientes
+                        de una empresa de telecomunicaciones en
+                        Latinoamérica. Incluye exploración de
+                        planes, consumo y patrones de uso.
                     </p>
 
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
 
+                    <a href="connectatel-analysis.html" class="project-link">
+                        Ver proyecto <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PROYECTO 4: INMOBILIARIO -->
+
+                <article class="project-card"
+                    data-category="bi"
+                    data-search="análisis comercial inmobiliario power bi dax power query cohortes ventas">
+
+                    <div class="project-number">PROYECTO 04</div>
+
+                    <h3>Análisis Comercial Inmobiliario</h3>
+
+                    <p>
+                        Dashboard para evaluar el rendimiento
+                        comercial inmobiliario. Incluye
+                        modelado de datos, indicadores DAX,
+                        análisis temporal y cohortes de clientes.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Power Query</span>
+                        <span class="tag">Cohortes</span>
+                    </div>
+
+                    <a href="analisis-inmobiliario.html" class="project-link">
+                        Ver proyecto <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PROYECTO 5: ANDES RETAIL -->
+
+                <article class="project-card"
+                    data-category="bi"
+                    data-search="andes retail group dashboard ingresos ganancias ventas países categorías power bi">
+
+                    <div class="project-number">PROYECTO 05</div>
+
+                    <h3>Andes Retail Group – Dashboard Comercial</h3>
+
+                    <p>
+                        Análisis del desempeño comercial durante
+                        2024–2025 mediante indicadores de ingresos,
+                        unidades vendidas, ganancias y margen,
+                        con vistas generales y de detalle.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">KPIs</span>
+                        <span class="tag">Dashboard</span>
+                        <span class="tag">Análisis comercial</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/Esperanzag-18"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">
+                        Explorar en GitHub <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PROYECTO 6: RAPPI PLUS -->
+
+                <article class="project-card"
+                    data-category="python sql bi"
+                    data-search="rappiplus proyecto final rentabilidad marketing funnel conversión cohortes experimento ab python sql power bi tableau">
+
+                    <div class="project-number">PROYECTO 06 · PROYECTO FINAL</div>
+
+                    <h3>RappiPlus – De datos a decisiones de negocio</h3>
+
+                    <p>
+                        Proyecto integral que combina análisis
+                        de rentabilidad, calidad de datos, funnel
+                        de conversión, retención por cohortes
+                        y experimento A/B para apoyar decisiones
+                        de negocio.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Estadística</span>
+                        <span class="tag">BI</span>
+                    </div>
+
+                    <a href="proyecto-final.html" class="project-link">
+                        Ver proyecto <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <div class="no-results" id="noResults">
+                    No se encontraron proyectos con ese criterio.
+                    Intenta con otra palabra o filtro.
                 </div>
 
             </div>
 
-        </section>
+        </div>
+    </section>
 
-        <!-- CONTACTO -->
-        <section class="contact" id="contacto">
 
-            <h2 class="section-title">Contacto</h2>
+    <!-- CONTACTO -->
 
-            <p>
-                Gracias por visitar mi portafolio.
-                Me interesa conectar con profesionales y oportunidades
-                en el área de análisis de datos.
-            </p>
+    <section class="contact-section" id="contacto">
 
-            <a class="btn"
-               href="https://github.com/Esperanzag-18"
-               target="_blank"
-               rel="noopener noreferrer">
-                Visita mi GitHub
-            </a>
+        <h2>Conectemos</h2>
 
-        </section>
+        <p>
+            Estoy interesada en oportunidades profesionales
+            relacionadas con análisis de datos, reporting,
+            visualización y análisis de negocio.
+        </p>
 
-    </main>
+        <a
+            href="https://github.com/Esperanzag-18"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary">
+            Visitar mi perfil de GitHub
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
-        © 2026 Esperanza García | Portafolio profesional
+        <p>
+            © 2026 Esperanza García |
+            Data Analyst Portfolio
+        </p>
     </footer>
+
+
+    <!-- FUNCIONALIDAD DEL BUSCADOR Y FILTROS -->
+
+    <script>
+        const searchInput = document.getElementById("projectSearch");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+        const projectCount = document.getElementById("projectCount");
+        const noResults = document.getElementById("noResults");
+
+        let activeFilter = "all";
+
+        function filterProjects() {
+            const searchText = searchInput.value.toLowerCase().trim();
+
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const category = card.dataset.category;
+                const searchData = (
+                    card.dataset.search + " " + card.innerText
+                ).toLowerCase();
+
+                const matchesFilter =
+                    activeFilter === "all" ||
+                    category.split(" ").includes(activeFilter);
+
+                const matchesSearch =
+                    searchData.includes(searchText);
+
+                const shouldShow = matchesFilter && matchesSearch;
+
+                card.style.display = shouldShow ? "flex" : "none";
+
+                if (shouldShow) {
+                    visibleCount++;
+                }
+            });
+
+            projectCount.textContent =
+                `Mostrando ${visibleCount} de ${projectCards.length} proyectos`;
+
+            noResults.style.display =
+                visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterProjects);
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                filterButtons.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                activeFilter = button.dataset.filter;
+
+                filterProjects();
+            });
+        });
+
+        filterProjects();
+    </script>
 
 </body>
 </html>
