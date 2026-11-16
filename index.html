@@ -2,416 +2,455 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esperanza García | Portafolio</title>
-  <meta name="description" content="Portafolio profesional de análisis de datos de Esperanza García.">
-  <style>
-    :root {
-      --navy: #142b43;
-      --blue: #246b8e;
-      --teal: #48a6a1;
-      --light: #f4f7fa;
-      --white: #ffffff;
-      --text: #34475a;
-      --muted: #718096;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Esperanza García | Portafolio</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta name="description" content="Portafolio profesional de Esperanza García. Proyectos de análisis de datos con Python, SQL y herramientas de visualización.">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
-    }
+    <style>
+        :root {
+            --navy: #142b43;
+            --blue: #246b8e;
+            --teal: #48a6a1;
+            --light: #f4f7fa;
+            --white: #ffffff;
+            --text: #34475a;
+            --muted: #718096;
+        }
 
-    header {
-      background: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      box-shadow: 0 2px 12px #142b4310;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .logo {
-      color: var(--navy);
-      font-size: 21px;
-      font-weight: bold;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: bold;
-    }
+        header {
+            background: var(--white);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 12px #142b4310;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    nav a:hover {
-      color: var(--teal);
-    }
+        .logo {
+            color: var(--navy);
+            font-size: 21px;
+            font-weight: bold;
+        }
 
-    .hero {
-      background: linear-gradient(135deg, #142b43, #246b8e);
-      color: white;
-      padding: 100px 8%;
-      text-align: center;
-    }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    .hero .tag {
-      color: #a9e2dc;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 58px);
-      margin: 15px 0;
-    }
+        nav a:hover {
+            color: var(--teal);
+        }
 
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: #e2edf4;
-      font-size: 18px;
-    }
+        .hero {
+            background: linear-gradient(135deg, #142b43, #246b8e);
+            color: white;
+            padding: 100px 8%;
+            text-align: center;
+        }
 
-    .btn {
-      display: inline-block;
-      background: var(--teal);
-      color: white;
-      padding: 12px 25px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .hero .tag {
+            color: #a9e2dc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
 
-    section {
-      padding: 75px 8%;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 58px);
+            margin: 15px 0;
+        }
 
-    .section-title {
-      color: var(--navy);
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            color: #e2edf4;
+            font-size: 18px;
+        }
 
-    .section-intro {
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
+        .btn {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
 
-    .about {
-      background: white;
-      max-width: none;
-    }
+        .btn:hover {
+            background: var(--blue);
+        }
 
-    .about-content {
-      max-width: 1000px;
-      margin: auto;
-    }
+        section {
+            padding: 75px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
+        .section-title {
+            color: var(--navy);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px #142b430c;
-      border: 1px solid #e8edf2;
-    }
+        .section-intro {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
 
-    .card h3 {
-      color: var(--blue);
-      margin-bottom: 12px;
-    }
+        .about {
+            background: white;
+            max-width: none;
+        }
 
-    .card p {
-      font-size: 15px;
-      color: var(--muted);
-    }
+        .about-content {
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    .skill-tag {
-      display: inline-block;
-      background: #e8f4f3;
-      color: #267c78;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 5px 4px 0 0;
-      font-size: 13px;
-    }
+        .about-content p {
+            margin-bottom: 15px;
+        }
 
-    .contact {
-      background: var(--navy);
-      color: white;
-      max-width: none;
-      text-align: center;
-    }
+        .skills,
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
 
-    .contact h2 {
-      color: white;
-    }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #142b430c;
+            border: 1px solid #e8edf2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-    .contact p {
-      color: #dce7ef;
-      margin: 12px 0 25px;
-    }
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
 
-    footer {
-      background: #0d2033;
-      color: #cbd5df;
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-    }
+        .card p {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
 
-    @media (max-width: 650px) {
-      header {
-        justify-content: center;
-      }
+        .skill-tag {
+            display: inline-block;
+            background: #e8f4f3;
+            color: #267c78;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 5px 4px 0 0;
+            font-size: 13px;
+        }
 
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
+        .card .btn {
+            margin-top: auto;
+        }
 
-      .hero {
-        padding: 70px 6%;
-      }
-    }
-  </style>
+        .contact {
+            background: var(--navy);
+            color: white;
+            max-width: none;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: #dce7ef;
+            margin: 12px 0 25px;
+        }
+
+        footer {
+            background: #0d2033;
+            color: #cbd5df;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Esperanza García</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">Esperanza García</div>
 
-  <main>
-    <div class="hero" id="inicio">
-      <p class="tag">Portafolio profesional</p>
-      <h1>Hola, soy Esperanza</h1>
-      <p>
-        Analista de datos en formación, apasionada por transformar
-        información en conocimientos que ayuden a tomar mejores decisiones.
-      </p>
-      <a class="btn" href="#proyectos">Conoce mis proyectos</a>
-    </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <section class="about" id="sobre-mi">
-      <div class="about-content">
-        <h2 class="section-title">Sobre mí</h2>
-        <p>
-          Soy una profesional con formación en General Business y experiencia
-          en áreas administrativas, servicio al cliente y gestión de procesos.
-          Actualmente estoy desarrollando mis habilidades en análisis de datos,
-          utilizando herramientas como Python y SQL.
-        </p>
-        <p>
-          Mi objetivo es convertir datos en información clara y útil para
-          apoyar la toma de decisiones.
-        </p>
-      </div>
-    </section>
+    <main>
 
-    <section id="habilidades">
-      <h2 class="section-title">Mis habilidades</h2>
-      <p class="section-intro">
-        Herramientas y conocimientos que estoy desarrollando.
-      </p>
+        <!-- INICIO -->
+        <div class="hero" id="inicio">
 
-      <div class="skills">
-        <div class="card">
-          <h3>Python</h3>
-          <p>Análisis, limpieza y exploración de datos.</p>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Pandas</span>
-        </div>
+            <p class="tag">Portafolio profesional</p>
 
-        <div class="card">
-          <h3>SQL</h3>
-          <p>Consultas, filtros y análisis de bases de datos.</p>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-        </div>
+            <h1>Hola, soy Esperanza</h1>
 
-        <div class="card">
-          <h3>Visualización</h3>
-          <p>Presentación de resultados e interpretación de información.</p>
-          <span class="skill-tag">Visualización</span>
-          <span class="skill-tag">Análisis</span>
-        </div>
-      </div>
-    </section>
+            <p>
+                Analista de datos en formación, apasionada por transformar
+                información en conocimientos que ayuden a tomar mejores decisiones.
+            </p>
 
-    <section id="proyectos">
-      <h2 class="section-title">Mis proyectos</h2>
-      <p class="section-intro">
-        Una selección de mis trabajos y ejercicios de análisis de datos.
-      </p>
-
-   
-<div class="projects">
-
-    <div class="card">
-        <h3>Store 1 – Customer Analysis</h3>
-        <p>
-            Proyecto de análisis de clientes y comportamiento
-            de compra mediante herramientas de análisis de datos.
-        </p>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Pandas</span>
-    </div>
-
-    <div class="card">
-        <h3>Music Analysis – TripleTen</h3>
-        <p>
-            Análisis de datos musicales para explorar patrones
-            de escucha, géneros y preferencias de usuarios.
-        </p>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Pandas</span>
-        <p>
-            <a class="btn" href="music-analysis.html">
-                Ver proyecto
+            <a class="btn" href="#proyectos">
+                Conoce mis proyectos
             </a>
-        </p>
-    </div>
 
-    <div class="card">
-        <h3>ConnectaTel – Telecomunicaciones</h3>
-        <p>
-            Análisis del comportamiento de clientes de
-            telecomunicaciones en Latinoamérica durante 2024.
-        </p>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Pandas</span>
-        <span class="skill-tag">Matplotlib</span>
-        <span class="skill-tag">Seaborn</span>
-        <p>
-            <a class="btn" href="connectatel-analysis.html">
-                Ver proyecto
-            </a>
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>Proyecto de SQL</h3>
-        <p>
-            Consultas y análisis de bases de datos.
-        </p>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">PostgreSQL</span>
-    </div>
-
-</div>
-
-       
-<div class="card">
-    <h3>ConnectaTel – Telecomunicaciones</h3>
-
-    <p>
-        Análisis del comportamiento de clientes
-        de una empresa de telecomunicaciones
-        en Latinoamérica durante 2024.
-    </p>
-
-    <span class="skill-tag">Python</span>
-    <span class="skill-tag">Pandas</span>
-    <span class="skill-tag">Matplotlib</span>
-    <span class="skill-tag">Seaborn</span>
-
-    <p>
-        <a class="btn" href="connectatel-analysis.html">
-            Ver proyecto
-        </a>
-    </p>
-</div>
-
-
-        <div class="project-card">
-    <div class="project-content">
-        <h3>ConnectaTel - Telecomunicaciones</h3>
-
-        <p>
-            Análisis del comportamiento de clientes
-            de una empresa de telecomunicaciones
-            en Latinoamérica durante 2024.
-        </p>
-
-        <p><strong>Herramientas:</strong> Python, Pandas,
-        Matplotlib, Seaborn.</p>
-
-        <a href="connectatel-analysis.html"
-           class="project-button">
-            Ver proyecto
-        </a>
-    </div>
-</div>
-
-        <div class="card">
-          <h3>Proyecto de SQL</h3>
-          <p>
-            Espacio reservado para presentar mis consultas y proyectos
-            de análisis con bases de datos.
-          </p>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">PostgreSQL</span>
         </div>
-      </div>
-    </section>
 
-    <section class="contact" id="contacto">
-      <h2 class="section-title">Contacto</h2>
-      <p>
-        Gracias por visitar mi portafolio. Me interesa conectar con
-        profesionales y oportunidades en el área de análisis de datos.
-      </p>
-      <a class="btn" href="https://github.com/Esperanzag-18" target="_blank">
-        Visita mi GitHub
-      </a>
-    </section>
-  </main>
+        <!-- SOBRE MI -->
+        <section class="about" id="sobre-mi">
 
-  <footer>
-    © 2026 Esperanza García | Portafolio profesional
-  </footer>
+            <div class="about-content">
+
+                <h2 class="section-title">Sobre mí</h2>
+
+                <p>
+                    Soy una profesional con formación en General Business
+                    y experiencia en áreas administrativas, servicio al
+                    cliente y gestión de procesos.
+                </p>
+
+                <p>
+                    Actualmente estoy desarrollando mis habilidades en
+                    análisis de datos, utilizando herramientas como Python,
+                    SQL y herramientas de visualización.
+                </p>
+
+                <p>
+                    Mi objetivo es convertir datos en información clara
+                    y útil para apoyar la toma de decisiones.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades">
+
+            <h2 class="section-title">Mis habilidades</h2>
+
+            <p class="section-intro">
+                Herramientas y conocimientos que estoy desarrollando.
+            </p>
+
+            <div class="skills">
+
+                <div class="card">
+                    <h3>Python</h3>
+                    <p>Análisis, limpieza y exploración de datos.</p>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                </div>
+
+                <div class="card">
+                    <h3>SQL</h3>
+                    <p>Consultas, filtros y análisis de bases de datos.</p>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                </div>
+
+                <div class="card">
+                    <h3>Visualización</h3>
+                    <p>Presentación de resultados e interpretación de información.</p>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Tableau</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos">
+
+            <h2 class="section-title">Mis proyectos</h2>
+
+            <p class="section-intro">
+                Una selección de mis trabajos y proyectos de análisis de datos.
+            </p>
+
+            <div class="projects">
+
+                <!-- PROYECTO 1 -->
+                <div class="card">
+
+                    <h3>Store 1 – Customer Analysis</h3>
+
+                    <p>
+                        Proyecto de análisis de clientes para explorar
+                        patrones de comportamiento y compra mediante
+                        herramientas de análisis de datos.
+                    </p>
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+
+                </div>
+
+                <!-- PROYECTO 2 -->
+                <div class="card">
+
+                    <h3>Music Analysis – TripleTen</h3>
+
+                    <p>
+                        Análisis de datos de reproducción musical para
+                        explorar patrones de escucha, géneros musicales
+                        y preferencias de usuarios en diferentes ciudades.
+                    </p>
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Jupyter Notebook</span>
+
+                    <a class="btn" href="music-analysis.html">
+                        Ver proyecto
+                    </a>
+
+                </div>
+
+                <!-- PROYECTO 3 -->
+                <div class="card">
+
+                    <h3>ConnectaTel – Telecomunicaciones</h3>
+
+                    <p>
+                        Análisis del comportamiento de clientes de una
+                        empresa de telecomunicaciones en Latinoamérica
+                        durante el año 2024.
+                    </p>
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+
+                    <a class="btn" href="connectatel-analysis.html">
+                        Ver proyecto
+                    </a>
+
+                </div>
+
+                <!-- PROYECTO 4 -->
+                <div class="card">
+
+                    <h3>Proyecto de SQL</h3>
+
+                    <p>
+                        Espacio reservado para presentar consultas,
+                        exploración y proyectos de análisis con
+                        bases de datos.
+                    </p>
+
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact" id="contacto">
+
+            <h2 class="section-title">Contacto</h2>
+
+            <p>
+                Gracias por visitar mi portafolio.
+                Me interesa conectar con profesionales y oportunidades
+                en el área de análisis de datos.
+            </p>
+
+            <a class="btn"
+               href="https://github.com/Esperanzag-18"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visita mi GitHub
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Esperanza García | Portafolio profesional
+    </footer>
 
 </body>
 </html>
