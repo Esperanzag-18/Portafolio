@@ -1,4 +1,4 @@
-# Esperanza Garcia | Data Analytics Portfolio
+# Esperanza Garcia | Data Analytics Portafolio
 
 Welcome to my Data Analytics Portfolio!
 
