@@ -74,6 +74,18 @@ Mi trayectoria en áreas administrativas y de Recursos Humanos me ha permitido d
 
 ---
 
-## 🎯 Mi objetivo profesional
+🎯Mi objetivo profesional
 
-Desarrollarme como Analista de Datos, participando en proyectos donde pueda combinar el conocimiento del negocio con el análisis de información, la visualización de datos
+Desarrollarme como Analista de Datos, participando en proyectos donde pueda combinar el conocimiento del negocio con el análisis de información, la visualización de datos y la mejora de procesos.
+
+Me encuentro en constante aprendizaje y desarrollo de proyectos prácticos para fortalecer mis habilidades técnicas y aportar soluciones basadas en datos.
+
+📫 Contacto
+
+GitHub: Esperanzag-18
+
+Correo: egarciacortes@gmail.com
+
+LinkedIn: [Agregar perfil de LinkedIn]
+
+⭐ Transformando datos en información y conocimiento para tomar mejores decisiones.
